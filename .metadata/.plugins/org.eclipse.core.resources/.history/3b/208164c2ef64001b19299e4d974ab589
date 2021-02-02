@@ -1,0 +1,54 @@
+package oliveira.willian.matheus;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.Period;
+import java.util.Date;
+
+import oliveira.willian.matheus.model.Calculo;
+import oliveira.willian.matheus.model.Pessoa;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Calculo imc = new Calculo();
+		Calculo ncd = new Calculo();
+		imc.imc();
+		ncd.ncd();
+		Pessoa teste = new Pessoa();
+		teste.setAltura(1.74);
+		teste.setPeso(100);
+		teste.setdataNasc("15/02/1996");
+		teste.getIdade();
+		System.out.println(teste.getIdade());
+		imc.getResultadoImc();
+		System.out.println(imc.getResultadoImc());
+		ncd.getResultadoNcd();
+		System.out.println(ncd.getResultadoNcd());
+		
+
+		
+		
+	}
+	
+	
+}
+	
+	
+	
+	
+	
+/*	public static void teste() {
+		LocalDate data1 = LocalDate.of(1996, 02, 15);
+		LocalDate data2 = LocalDate.of(2020, 02, 01);
+		
+		Period idade = Period.between(data1, data2);
+		int anos = idade.getYears();
+		
+		System.out.println(anos);
+		
+	} */
+

@@ -1,0 +1,19 @@
+package oliveira.willian.matheus.model;
+
+
+public class Calculo {
+	
+	private double resultadoImc;
+	private double ncd;
+	
+	Pessoa p = new Pessoa();
+	
+	public double resultadoImc() {
+		return this.resultadoImc;
+	}
+	
+	public void imc() {
+		this.resultadoImc = p.getPeso()/(p.getAltura()*p.getAltura());
+		
+	}
+}

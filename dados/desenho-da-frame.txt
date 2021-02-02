@@ -1,0 +1,27 @@
+academia;
+saber que tipo de exercicio aplicar pra ele (IMC  NCD);
+
+aluno fala as medidas e devolve o IMC e NCD;
+
+objeto pessoa -> nome, peso, altura, sexo (radio), idade 
+
+formula imc: IMC = Peso ÷ (Altura × Altura)
+
+formula do NCD:
+
+Homens
+Entre 18 a 30 anos — 15,3 x peso + 679;
+Entre 31 a 60 anos — 11,6 x peso + 879;
+Acima de 60 anos — 13,5 x peso + 487.
+
+Mulheres
+Entre 18 a 30 anos — 14,7 x peso + 496
+Entre 31 a 60 anos — 8,7 x peso + 829;
+Acima de 60 anos — 10,5 x peso + 596.
+
+O resultado disso, vc multiplica por:
+Atividade leve — 1,6 para mulheres e 1,5 para homens;
+Atividade moderada — 1,6 para mulheres e 1,8 para homens;
+Atividade intensa — 1,8 para mulheres e 2,1 para homens.
+
+combobox? tipo de atividade fisica?
