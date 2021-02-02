@@ -1,24 +1,51 @@
 package oliveira.willian.matheus;
 
 
-import oliveira.willian.matheus.model.Calculo;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
+import oliveira.willian.matheus.gui.FrameFront;
 import oliveira.willian.matheus.model.Pessoa;
 
 public class App {
 
 	public static void main(String[] args) {
 		
-		Pessoa p = new Pessoa();
-		Calculo imc = new Calculo();
-		Calculo ncd = new Calculo();
-		p.setAltura(1.74);
-		p.setPeso(100);
-		p.setdataNasc("15/02/1996");
-		System.out.println(p.getIdade());
-		System.out.println(imc.getImc());
-		System.out.println(ncd.getNcd());
-		System.out.println(p.getAltura());
-		System.out.println(p.getPeso());
+		DecimalFormat formatado = new DecimalFormat("#,##0.00");
+		formatado.setRoundingMode(RoundingMode.DOWN);
+		
+		FrameFront j = new FrameFront();
+		j.criarTela();
+		
+		Pessoa pM = new Pessoa();
+		Pessoa pF = new Pessoa();
+		pM.setAltura(1.74);
+		pM.setPeso(100);
+		pM.setdataNasc("15/02/1990");
+		pM.setSexo("Masculino");
+		pM.setTipoAtividade("Intensa");
+		
+		pF.setAltura(1.50);
+		pF.setPeso(50);
+		pF.setdataNasc("15/02/2000");
+		pF.setSexo("Feminino");
+		pF.setTipoAtividade("Leve");
+		
+		System.out.println(pM.getIdade());
+		System.out.println(pM.getAltura());
+		System.out.println(pM.getPeso());
+		System.out.println(formatado.format(pM.getImc())+"kg/m2");
+		System.out.println(pM.getTipoAtividade());
+		System.out.println(formatado.format(pM.getNcd()));
+		System.out.println("----------------------------");
+		System.out.println(pF.getIdade());
+		System.out.println(pF.getAltura());
+		System.out.println(pF.getPeso());
+		System.out.println(formatado.format(pF.getImc())+"kg/m2");
+		System.out.println(pF.getTipoAtividade());
+		System.out.println(formatado.format(pF.getNcd()));
+
+		
 		
 
 		

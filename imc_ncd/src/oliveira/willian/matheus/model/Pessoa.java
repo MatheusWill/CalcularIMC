@@ -1,6 +1,7 @@
 package oliveira.willian.matheus.model;
 
 
+import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.Period;
 import java.time.format.DateTimeFormatter;
@@ -14,6 +15,7 @@ public class Pessoa {
 	private String sexo;
 	private String dataNasc;
 	private int idade;
+	private String tipoAtividade; 
 	
 	public void setNome(String nome) {
 		this.nome = nome;
@@ -34,7 +36,9 @@ public class Pessoa {
 		return this.altura;
 	}
 	public void setSexo(String sexo) {
-		this.sexo = sexo;
+		if(sexo.equals("Masculino") || sexo.equals("Feminino")) {
+			this.sexo = sexo;
+		}
 	}
 	public String getSexo() {
 		return this.sexo;
@@ -53,6 +57,72 @@ public class Pessoa {
 		//String dataFormatado = hoje.format(formatter);
 		return this.idade = idade;
 	}
+	public void setTipoAtividade(String tipoAtividade){
+		if(tipoAtividade.equals("Leve") || tipoAtividade.equals("Moderada") || tipoAtividade.equals("Intensa")) {
+			if(getSexo().equals("Masculino")) {
+				if(tipoAtividade.equals("Leve")) {
+					this.tipoAtividade = String.valueOf(1.5);
+				} else if(tipoAtividade.equals("Moderada")) {
+					this.tipoAtividade = String.valueOf(1.8);
+				} else if(tipoAtividade.equals("Intensa")) {
+					this.tipoAtividade = String.valueOf(2.1);
+				}
+			} else if (getSexo().equals("Feminino")){
+				if(tipoAtividade.equals("Leve")) {
+					this.tipoAtividade = String.valueOf(1.6);
+				} else if(tipoAtividade.equals("Moderada")) {
+					this.tipoAtividade = String.valueOf(1.6);
+				} else if(tipoAtividade.equals("Intensa")) {
+					this.tipoAtividade = String.valueOf(1.8);
+				}
+			}	
+		}
+	}
+	public String getTipoAtividade() {
+		return this.tipoAtividade;
+	}
+	public double getImc() {
+		if (getPeso()/(getAltura()*getAltura()) < 17){
+			
+            System.out.println("Muito abaixo do peso");
+		} else if (getPeso()/(getAltura()*getAltura()) >= 17 && getPeso()/(getAltura()*getAltura()) < 18.5){
+            System.out.println("Abaixo do peso");
+		} else if (getPeso()/(getAltura()*getAltura()) >= 18.5 && getPeso()/(getAltura()*getAltura()) < 25){
+            System.out.println("Peso normal");
+		} else if (getPeso()/(getAltura()*getAltura()) >= 25 && getPeso()/(getAltura()*getAltura()) < 30){
+            System.out.println("Acima do peso");
+		} else if (getPeso()/(getAltura()*getAltura()) >= 30 && getPeso()/(getAltura()*getAltura()) < 35){
+			System.out.println("Obesidade I");
+		} else if (getPeso()/(getAltura()*getAltura()) >= 35 && getPeso()/(getAltura()*getAltura()) < 40){
+            System.out.println("Obesidade II (severa)");
+		} else {
+            System.out.println("Obesidade III (mórbida)");
+		}
+		return  getPeso()/(getAltura()*getAltura());
+	}
+	public double getNcd() {
+		if(getSexo().equals("Masculino")) {
+			if(getIdade() >= 18 && getIdade() <= 30) {
+				return  (15.3 * getPeso() + 679) * Double.parseDouble(getTipoAtividade());
+			} else if(getIdade() > 30 && getIdade() <= 60) {
+				return (11.6 * getPeso() + 879) * Double.parseDouble(getTipoAtividade());
+			} else if(getIdade() > 60){
+				return (13.5 * getPeso() + 487) * Double.parseDouble(getTipoAtividade());
+			}
+		} else if (getSexo().equals("Feminino")) {
+			if(getIdade() >= 18 && getIdade() <= 30) {
+				return (14.7 * getPeso() + 496) * Double.parseDouble(getTipoAtividade());
+			} else if(getIdade() > 30 && getIdade() <= 60) {
+				return (8.7 * getPeso() + 829) * Double.parseDouble(getTipoAtividade());
+			} else if(getIdade() > 60){
+				return (10.5 * getPeso() + 596) * Double.parseDouble(getTipoAtividade());
+			}
+		} else {
+			System.out.println("Idade inválida!!");
+		}
+		return 0;
+	}
+	
 /*	LocalDate d1 = LocalDate.parse("2018-05-26", DateTimeFormatter.ISO_LOCAL_DATE);
 	LocalDate d2 = LocalDate.parse("2018-05-28", DateTimeFormatter.ISO_LOCAL_DATE);
 	Duration diff = Duration.between(d1.atStartOfDay(), d2.atStartOfDay());

@@ -24,4 +24,6 @@ Atividade leve — 1,6 para mulheres e 1,5 para homens;
 Atividade moderada — 1,6 para mulheres e 1,8 para homens;
 Atividade intensa — 1,8 para mulheres e 2,1 para homens.
 
-combobox? tipo de atividade fisica?
+combobox? tipo de atividade fisica? 
+
+"%.2f"

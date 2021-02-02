@@ -1,0 +1,60 @@
+package oliveira.willian.matheus;
+
+
+import oliveira.willian.matheus.model.Pessoa;
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Pessoa pM = new Pessoa();
+		Pessoa pF = new Pessoa();
+		pM.setAltura(1.74);
+		pM.setPeso(100);
+		pM.setdataNasc("15/02/1996");
+		pM.setSexo("Masculino");
+		pM.setTipoAtividade("Intensa");
+		
+		pF.setAltura(1.50);
+		pF.setPeso(50);
+		pF.setdataNasc("15/02/1991");
+		pF.setSexo("Feminino");
+		pF.setTipoAtividade("Intensa");
+		
+		System.out.println(pM.getIdade());
+		System.out.println(pM.getAltura());
+		System.out.println(pM.getPeso());
+		System.out.println(pM.getImc());
+		System.out.println(pM.getTipoAtividade());
+		System.out.println(pM.getNcd());
+		System.out.println("----------------------------");
+		System.out.println(pF.getIdade());
+		System.out.println(pF.getAltura());
+		System.out.println(pF.getPeso());
+		System.out.println(pF.getImc());
+		System.out.println(pF.getTipoAtividade());
+		
+		
+
+		
+		
+	}
+	
+	
+}
+	
+	
+	
+	
+	
+/*	public static void teste() {
+		LocalDate data1 = LocalDate.of(1996, 02, 15);
+		LocalDate data2 = LocalDate.of(2020, 02, 01);
+		
+		Period idade = Period.between(data1, data2);
+		int anos = idade.getYears();
+		
+		System.out.println(anos);
+		
+	} */
+
