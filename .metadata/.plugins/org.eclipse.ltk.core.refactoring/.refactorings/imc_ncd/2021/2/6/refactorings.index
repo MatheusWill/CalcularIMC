@@ -5,3 +5,6 @@
 1612264804246	Rename local variable 'pH'
 1612270606143	Rename local variable 'df'
 1612271921640	Delete element
+1612529628751	Rename local variable 'textNome'
+1612535595868	Rename local variable 'labelIdade'
+1612535647622	Rename local variable 'txtIdade'

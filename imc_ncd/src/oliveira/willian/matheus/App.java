@@ -17,6 +17,8 @@ public class App {
 		FrameFront j = new FrameFront();
 		j.criarTela();
 		
+		
+		
 		Pessoa pM = new Pessoa();
 		Pessoa pF = new Pessoa();
 		pM.setAltura(1.74);
